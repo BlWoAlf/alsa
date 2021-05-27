@@ -1,0 +1,13 @@
+.interactive-map{
+    img{
+        @extend %img-fill;
+        object-fit: contain;
+    }
+    svg{
+        @extend %img-fill;
+        g{
+            @extend %img-fill;
+            object-fit: contain;
+        }
+    }
+}

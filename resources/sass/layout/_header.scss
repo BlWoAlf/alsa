@@ -1,0 +1,29 @@
+.header{
+    min-height: 136px;
+    background-color: $head-color;
+    position: relative;
+    .header__line{
+        @extend %flex-center-row;
+    }
+    @media (min-width: 1400px){
+        .logo{
+            margin-right: 380px;
+        }   
+    }
+}
+
+.header__burger-button{
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    border: 1px solid $white-color;
+    border-radius: 3px;
+    margin-left: auto;
+    svg{
+        @extend %img-fill;
+        color: $white-color;
+    }
+    @media (min-width: 768px){
+        display: none;
+    }
+}

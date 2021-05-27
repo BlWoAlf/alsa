@@ -1,0 +1,26 @@
+@import 'utils/variables';
+@import 'utils/placeholders';
+@import 'utils/functions';
+
+// @import 'vendors/fonts';
+@import 'vendors/bootstrap';
+@import 'vendors/photoswipe';
+
+@import 'base/base';
+@import 'base/colors';
+@import 'base/typography';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/section';
+@import 'layout/list';
+@import 'layout/container_short';
+
+@import 'components/logo';
+@import 'components/menu';
+@import 'components/button';
+@import 'components/route';
+@import 'components/map';
+@import 'components/interactive-map';
+
+@import 'pages/main-page';

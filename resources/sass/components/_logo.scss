@@ -1,0 +1,38 @@
+.logo{
+    a{
+        @extend %flex-center-row;
+        @extend %clean-link;
+        color: $white-color;
+    }
+}
+
+.logo__img{
+    img{
+       @extend %img-fill;
+    }
+}
+
+.header__logo{
+    .logo__img{
+        width: 133px;
+        height: 126px;
+    }
+}
+
+.footer__logo{
+    max-width: 250px;
+    margin-bottom: 29px;
+    .logo__img{
+        width: 63px;
+        height: 55px;
+        margin-right: 33px;
+    }
+}
+
+.logo__bg{
+    position: absolute;
+    width: 397px;
+    height: 344px;
+    left: 0px;
+    bottom: 0px;
+}

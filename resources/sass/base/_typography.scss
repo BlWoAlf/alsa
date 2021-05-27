@@ -1,0 +1,130 @@
+$primary-font: 'Open Sans';
+
+$standart-text-size: 16px;
+$standart-style: normal;
+$standart-weight: normal;
+$header-wight: bold;
+
+$standart-text-line-height: 22px;
+$news-text-line-height: 17px;
+
+body{
+    font-family: $primary-font;
+    font-style: $standart-style;
+    font-weight: $standart-weight;
+}
+
+.h1-header{
+    font-size: 36px;
+    line-height: 49px;
+    margin-bottom: 48px;
+    font-weight: $header-wight;
+    text-transform: uppercase;
+    text-align: center;
+}
+.h2-header{
+    font-weight: $header-wight;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 16px;
+}
+.h3-header{
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    font-weight: $standart-weight;
+}
+.h4-header{
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 16px;
+    font-weight: $standart-weight;
+}
+.h5-header{
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 16px;
+    font-weight: $standart-weight;
+}
+
+.text{
+    font-size: $standart-text-size;
+    line-height: $standart-text-line-height;
+    margin-bottom: 16px;
+}
+.route{
+    @extend .text;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.h1-main{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 65px;
+    text-transform: uppercase;
+}
+
+.h1-logo{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 65px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+
+.menu{    
+    font-size: 18px;
+    line-height: 36px;
+}
+.header__menu{
+    text-align: center;
+}
+.footer__menu{
+    font-weight: 600;
+    text-shadow: 0px 1px 1px #000000;
+}
+.footer__descripition{
+    .text{
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+.footer__contacts{
+    .text{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: right;
+    }
+}
+.button{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+// .contacts{
+//     font-family: $primary-font;
+//     font-size: 18px;
+//     line-height: 22px;
+// }
+// .header__contacts{
+//     a{
+//         text-align: right;
+//     }
+// }
+// .footer__contacts{
+//     a{
+//         text-align: center;
+//     }
+// }
+
+// .question-contacts{
+//     font-family: $primary-font;
+//     font-weight: bold;
+//     font-size: 24px;
+//     line-height: 29px;
+//     text-align: center;
+// }

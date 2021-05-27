@@ -1,0 +1,22 @@
+.footer{
+    min-height: 476px;
+    background: url('../../images/footer-bg.jpg') no-repeat center;
+    background-size: cover;
+    padding: 60px 0px 100px;
+}
+.footer__descripition{
+    max-width: 300px;
+    .text{
+        color: $white-color;
+    }
+}
+.footer__menu{
+    margin-top: 12px;
+}
+.footer__contacts{
+    float: right;
+    margin-top: 17px;
+    .text{
+        color: $footer-contacts-color;
+    }
+}

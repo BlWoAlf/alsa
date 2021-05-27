@@ -1,0 +1,24 @@
+.header_main{
+    min-height: 725px;
+    background: url('../../images/main-header-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+.header__menu_main{
+    a{
+        color: $main-header-menu-color;
+        text-decoration: underline;
+    }
+}
+.header__banner{
+    position: relative;
+    padding-top: 40px;
+}
+
+.header__header{
+    max-width: 500px;
+    margin-bottom: 58px;
+}
+
+.h1-main{
+    color: #FFFFFF;
+}
