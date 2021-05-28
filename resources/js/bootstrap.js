@@ -19,6 +19,8 @@ const bootstrap = require('bootstrap');
 window.PhotoSwipe = require('photoswipe');
 window.PhotoSwipeUI_Default = require('./../../node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js');
 
+// window.MmenuLight = require('mmenu-light');
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

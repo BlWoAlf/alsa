@@ -16,25 +16,16 @@
             </svg>
         </div>
         <div class="menu header__menu">
-            <ul class="horizontal-list menu__list">
-                @php($links = \App\Models\Adfm\Menu::getData('main'))
-                @foreach($links[0] as $el)
-                <li class="list__item">
-                    <a href="{{$el->link}}">{{$el->title}}</a>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="menu menu-mobile">
-            <div class="container">
-                <ul class="vertical-list menu__list">
+            <nav class="main-menu">
+                <ul class="horizontal-list menu__list">
+                    @php($links = \App\Models\Adfm\Menu::getData('main'))
                     @foreach($links[0] as $el)
                     <li class="list__item">
                         <a href="{{$el->link}}">{{$el->title}}</a>
                     </li>
                     @endforeach
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </div>        
     </div>
 </header>

@@ -16,7 +16,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-xl-4">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="footer__content footer__descripition">
                     <div class="logo footer__logo">
                         <a href="/">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-xl-4">
+            <div class="col-12 col-sm-4 col-md-6 col-lg-2 col-xl-4">
                 <div class="menu footer__content footer__menu">
                     <ul class="vertical-list footer__list">
                         @php($links = \App\Models\Adfm\Menu::getData('footer-menu'))
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-12 col-xl-4">
+            <div class="col-12 col-lg-6 col-xl-4">
                 <div class="footer__content footer__contacts">
                     <div class="footer__contacts-text">
                         <p class="text">АДРЕС: 655017, Россия, Республика Хакасия, г. Абакан, ул. Кирова 217</p>

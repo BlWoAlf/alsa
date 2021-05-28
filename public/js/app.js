@@ -4938,6 +4938,232 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./public/vendor/mmenu-light/dist/mmenu-light.js":
+/*!*******************************************************!*\
+  !*** ./public/vendor/mmenu-light/dist/mmenu-light.js ***!
+  \*******************************************************/
+/***/ (() => {
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+!function (t) {
+  var e = {};
+
+  function n(i) {
+    if (e[i]) return e[i].exports;
+    var o = e[i] = {
+      i: i,
+      l: !1,
+      exports: {}
+    };
+    return t[i].call(o.exports, o, o.exports, n), o.l = !0, o.exports;
+  }
+
+  n.m = t, n.c = e, n.d = function (t, e, i) {
+    n.o(t, e) || Object.defineProperty(t, e, {
+      enumerable: !0,
+      get: i
+    });
+  }, n.r = function (t) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(t, "__esModule", {
+      value: !0
+    });
+  }, n.t = function (t, e) {
+    if (1 & e && (t = n(t)), 8 & e) return t;
+    if (4 & e && "object" == _typeof(t) && t && t.__esModule) return t;
+    var i = Object.create(null);
+    if (n.r(i), Object.defineProperty(i, "default", {
+      enumerable: !0,
+      value: t
+    }), 2 & e && "string" != typeof t) for (var o in t) {
+      n.d(i, o, function (e) {
+        return t[e];
+      }.bind(null, o));
+    }
+    return i;
+  }, n.n = function (t) {
+    var e = t && t.__esModule ? function () {
+      return t["default"];
+    } : function () {
+      return t;
+    };
+    return n.d(e, "a", e), e;
+  }, n.o = function (t, e) {
+    return Object.prototype.hasOwnProperty.call(t, e);
+  }, n.p = "", n(n.s = 0);
+}([function (t, e, n) {
+  "use strict";
+
+  n.r(e);
+
+  var i = function () {
+    function t(t) {
+      var e = this;
+      this.listener = function (t) {
+        (t.matches ? e.matchFns : e.unmatchFns).forEach(function (t) {
+          t();
+        });
+      }, this.toggler = window.matchMedia(t), this.toggler.addListener(this.listener), this.matchFns = [], this.unmatchFns = [];
+    }
+
+    return t.prototype.add = function (t, e) {
+      this.matchFns.push(t), this.unmatchFns.push(e), (this.toggler.matches ? t : e)();
+    }, t;
+  }(),
+      o = function o(t) {
+    return Array.prototype.slice.call(t);
+  },
+      s = function s(t, e) {
+    return o((e || document).querySelectorAll(t));
+  },
+      r = ("ontouchstart" in window || navigator.msMaxTouchPoints, navigator.userAgent.indexOf("MSIE") > -1 || navigator.appVersion.indexOf("Trident/") > -1),
+      a = "mm-spn",
+      c = function () {
+    function t(t, e, n, i, o) {
+      this.node = t, this.title = e, this.slidingSubmenus = i, this.selectedClass = n, this.node.classList.add(a), r && (this.slidingSubmenus = !1), this.node.classList.add(a + "--" + o), this.node.classList.add(a + "--" + (this.slidingSubmenus ? "navbar" : "vertical")), this._setSelectedl(), this._initAnchors();
+    }
+
+    return Object.defineProperty(t.prototype, "prefix", {
+      get: function get() {
+        return a;
+      },
+      enumerable: !1,
+      configurable: !0
+    }), t.prototype.openPanel = function (t) {
+      var e = t.parentElement;
+
+      if (this.slidingSubmenus) {
+        var n = t.dataset.mmSpnTitle;
+        e === this.node ? this.node.classList.add(a + "--main") : (this.node.classList.remove(a + "--main"), n || o(e.children).forEach(function (t) {
+          t.matches("a, span") && (n = t.textContent);
+        })), n || (n = this.title), this.node.dataset.mmSpnTitle = n, s(".mm-spn--open", this.node).forEach(function (t) {
+          t.classList.remove(a + "--open"), t.classList.remove(a + "--parent");
+        }), t.classList.add(a + "--open"), t.classList.remove(a + "--parent");
+
+        for (var i = t.parentElement.closest("ul"); i;) {
+          i.classList.add(a + "--open"), i.classList.add(a + "--parent"), i = i.parentElement.closest("ul");
+        }
+      } else {
+        var r = t.matches(".mm-spn--open");
+        s(".mm-spn--open", this.node).forEach(function (t) {
+          t.classList.remove(a + "--open");
+        }), t.classList[r ? "remove" : "add"](a + "--open");
+
+        for (var c = t.parentElement.closest("ul"); c;) {
+          c.classList.add(a + "--open"), c = c.parentElement.closest("ul");
+        }
+      }
+    }, t.prototype._setSelectedl = function () {
+      var t = s("." + this.selectedClass, this.node),
+          e = t[t.length - 1],
+          n = null;
+      e && (n = e.closest("ul")), n || (n = this.node.querySelector("ul")), this.openPanel(n);
+    }, t.prototype._initAnchors = function () {
+      var t = this;
+      this.node.addEventListener("click", function (e) {
+        var n = e.target,
+            i = !1;
+        (i = (i = (i = i || function (t) {
+          return !!t.matches("a");
+        }(n)) || function (e) {
+          var n;
+          return !!(n = e.closest("span") ? e.parentElement : !!e.closest("li") && e) && (o(n.children).forEach(function (e) {
+            e.matches("ul") && t.openPanel(e);
+          }), !0);
+        }(n)) || function (e) {
+          var n = s(".mm-spn--open", e),
+              i = n[n.length - 1];
+
+          if (i) {
+            var o = i.parentElement.closest("ul");
+            if (o) return t.openPanel(o), !0;
+          }
+
+          return !1;
+        }(n)) && e.stopImmediatePropagation();
+      });
+    }, t;
+  }(),
+      d = function () {
+    function t(t, e) {
+      var n = this;
+      void 0 === t && (t = null), this.wrapper = document.createElement("div"), this.wrapper.classList.add("mm-ocd"), this.wrapper.classList.add("mm-ocd--" + e), this.content = document.createElement("div"), this.content.classList.add("mm-ocd__content"), this.wrapper.append(this.content), this.backdrop = document.createElement("div"), this.backdrop.classList.add("mm-ocd__backdrop"), this.wrapper.append(this.backdrop), document.body.append(this.wrapper), t && this.content.append(t);
+
+      var i = function i(t) {
+        n.close(), t.stopImmediatePropagation();
+      };
+
+      this.backdrop.addEventListener("touchstart", i, {
+        passive: !0
+      }), this.backdrop.addEventListener("mousedown", i, {
+        passive: !0
+      });
+    }
+
+    return Object.defineProperty(t.prototype, "prefix", {
+      get: function get() {
+        return "mm-ocd";
+      },
+      enumerable: !1,
+      configurable: !0
+    }), t.prototype.open = function () {
+      this.wrapper.classList.add("mm-ocd--open"), document.body.classList.add("mm-ocd-opened");
+    }, t.prototype.close = function () {
+      this.wrapper.classList.remove("mm-ocd--open"), document.body.classList.remove("mm-ocd-opened");
+    }, t;
+  }(),
+      u = function () {
+    function t(t, e) {
+      void 0 === e && (e = "all"), this.menu = t, this.toggler = new i(e);
+    }
+
+    return t.prototype.navigation = function (t) {
+      var e = this;
+
+      if (!this.navigator) {
+        var n = (t = t || {}).title,
+            i = void 0 === n ? "Menu" : n,
+            o = t.selectedClass,
+            s = void 0 === o ? "Selected" : o,
+            r = t.slidingSubmenus,
+            a = void 0 === r || r,
+            d = t.theme,
+            u = void 0 === d ? "light" : d;
+        this.navigator = new c(this.menu, i, s, a, u), this.toggler.add(function () {
+          return e.menu.classList.add(e.navigator.prefix);
+        }, function () {
+          return e.menu.classList.remove(e.navigator.prefix);
+        });
+      }
+
+      return this.navigator;
+    }, t.prototype.offcanvas = function (t) {
+      var e = this;
+
+      if (!this.drawer) {
+        var n = (t = t || {}).position,
+            i = void 0 === n ? "left" : n;
+        this.drawer = new d(null, i);
+        var o = document.createComment("original menu location");
+        this.menu.after(o), this.toggler.add(function () {
+          e.drawer.content.append(e.menu);
+        }, function () {
+          e.drawer.close(), o.after(e.menu);
+        });
+      }
+
+      return this.drawer;
+    }, t;
+  }();
+
+  e["default"] = u;
+  window.MmenuLight = u;
+}]);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -4990,14 +5216,20 @@ $(function () {
   $('.about-company__img').click(function () {
     var index = $(this).parent().index();
     openPhotoSwipe(index);
-  });
+  }); // $('.header__burger-button').click(function(){
+  //     $('.menu-mobile').toggleClass('menu-mobile_active');
+  // });
+  // $(document).mouseup(function (e){
+  // 	if (!$('.header__burger-button').is(e.target) && $('.header__burger-button').has(e.target).length === 0 && !$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0 && $('.menu-mobile').hasClass('menu-mobile_active')) {
+  //         $('.menu-mobile').removeClass('menu-mobile_active');
+  //     }
+  // });
+
+  var menu = new MmenuLight(document.querySelector(".main-menu"), "(max-width: 767px)");
+  var navigator = menu.navigation();
+  var drawer = menu.offcanvas();
   $('.header__burger-button').click(function () {
-    $('.menu-mobile').toggleClass('menu-mobile_active');
-  });
-  $(document).mouseup(function (e) {
-    if (!$('.header__burger-button').is(e.target) && $('.header__burger-button').has(e.target).length === 0 && !$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0 && $('.menu-mobile').hasClass('menu-mobile_active')) {
-      $('.menu-mobile').removeClass('menu-mobile_active');
-    }
+    drawer.open();
   });
 });
 
@@ -5026,7 +5258,8 @@ try {
 var bootstrap = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
 window.PhotoSwipe = __webpack_require__(/*! photoswipe */ "./node_modules/photoswipe/dist/photoswipe.js");
-window.PhotoSwipeUI_Default = __webpack_require__(/*! ./../../node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js */ "./node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js");
+window.PhotoSwipeUI_Default = __webpack_require__(/*! ./../../node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js */ "./node_modules/photoswipe/src/js/ui/photoswipe-ui-default.js"); // window.MmenuLight = require('mmenu-light');
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -10017,9 +10250,9 @@ defineJQueryPlugin(Toast);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css":
 /*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css ***!
   \********************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -38234,6 +38467,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./public/vendor/mmenu-light/dist/mmenu-light.css":
+/*!********************************************************!*\
+  !*** ./public/vendor/mmenu-light/dist/mmenu-light.css ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./public/fonts/Open Sans/stylesheet.css":
 /*!***********************************************!*\
   !*** ./public/fonts/Open Sans/stylesheet.css ***!
@@ -43065,7 +43311,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./tippy.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css");
+/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./tippy.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].oneOf[1].use[2]!./node_modules/tippy.js/dist/tippy.css");
 
             
 
@@ -43074,11 +43320,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_8_oneOf_1_use_2_tippy_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -46002,7 +46248,9 @@ tippy.setDefaultProps({
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/vendor/mmenu-light/dist/mmenu-light.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/vendor/mmenu-light/dist/mmenu-light.css")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./public/fonts/Open Sans/stylesheet.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

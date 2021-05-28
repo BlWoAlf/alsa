@@ -49,13 +49,25 @@ $(function(){
         openPhotoSwipe(index);
     });
 
-    $('.header__burger-button').click(function(){
-        $('.menu-mobile').toggleClass('menu-mobile_active');
-    });
+    // $('.header__burger-button').click(function(){
+    //     $('.menu-mobile').toggleClass('menu-mobile_active');
+    // });
 
-    $(document).mouseup(function (e){
-		if (!$('.header__burger-button').is(e.target) && $('.header__burger-button').has(e.target).length === 0 && !$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0 && $('.menu-mobile').hasClass('menu-mobile_active')) {
-            $('.menu-mobile').removeClass('menu-mobile_active');
-        }
-	});
+    // $(document).mouseup(function (e){
+	// 	if (!$('.header__burger-button').is(e.target) && $('.header__burger-button').has(e.target).length === 0 && !$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0 && $('.menu-mobile').hasClass('menu-mobile_active')) {
+    //         $('.menu-mobile').removeClass('menu-mobile_active');
+    //     }
+	// });
+    
+    const menu = new MmenuLight(
+        document.querySelector( ".main-menu" ),
+        "(max-width: 767px)"
+    );
+
+    const navigator = menu.navigation();
+    const drawer = menu.offcanvas();
+
+    $('.header__burger-button').click(function(){        
+        drawer.open();
+    });    
 });

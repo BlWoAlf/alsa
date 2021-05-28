@@ -2,7 +2,7 @@
 @section('meta-title', $page->title)
 @section('content')
 @include('adfm.public.header')
-    <section class="section about-company"> 
+    <section class="section"> 
         <div class="container container_short">
             <div class="route">
                 <span><a href="{{route('adfm.show.main-page')}}">Главная</a> > {{$page->title}}</span>
@@ -22,8 +22,7 @@
                 <div class="row">
                     @foreach($page->files as $file)
                     <div class="col-6 col-sm-3">
-                        <div class="about-company__img">
-                            {{-- <img src="{!! $file->url !!}" alt="{{$file->original_name}}"> --}}
+                        <div class="about-company__img">                           
                             {!! ImageCache::get($file, ['w' => 260, 'h' => 370, 'fit' => 'crop'])->alt($file->original_name) !!}
                         </div>
                     </div>

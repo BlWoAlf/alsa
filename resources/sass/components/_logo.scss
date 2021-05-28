@@ -14,8 +14,12 @@
 
 .header__logo{
     .logo__img{
-        width: 133px;
-        height: 126px;
+        width: 103px;
+        height: 96px;
+        @media (min-width: 992px){
+            width: 133px;
+            height: 126px;
+        }
     }
 }
 

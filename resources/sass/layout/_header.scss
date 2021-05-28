@@ -1,9 +1,12 @@
 .header{
-    min-height: 136px;
+    min-height: 96px;
     background-color: $head-color;
     position: relative;
     .header__line{
         @extend %flex-center-row;
+    }
+    @media (min-width: 992px){
+        min-height: 136px; 
     }
     @media (min-width: 1400px){
         .logo{

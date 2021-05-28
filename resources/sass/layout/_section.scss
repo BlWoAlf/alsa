@@ -1,5 +1,8 @@
 .section{
-    padding: 52px 0px 0px 0px;
+    padding: 52px 0px 90px 0px;    
+    @media(min-width: 768px){
+        padding-bottom: 110px;
+    }
     .route{
         margin-bottom: 22px;
         a{
@@ -14,15 +17,15 @@
     }
 }
 
-.about-company{
-    padding-bottom: 180px;
-}
 .about-company_short{
-    min-height: 878px;
+    min-height: 726px;
     background: url('../../images/about-bg.jpg') no-repeat center;
     background-size: cover;
     .text{
         text-align: center;
+    }
+    @media(min-width: 768px){
+        min-height: 878px;
     }
 }
 .about-company__img{
@@ -39,7 +42,10 @@
 }
 
 .geography-activity{
-    padding-bottom: 250px;
+    padding-bottom: 50px;
+    @media(min-width: 768px){
+        padding-bottom: 180px;
+    }
 }
 .geography-activity__map-img{
     width: 100%;

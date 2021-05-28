@@ -1,7 +1,10 @@
 .header_main{
-    min-height: 725px;
+    min-height: 530px;
     background: url('../../images/main-header-bg.jpg') no-repeat center;
     background-size: cover;
+    @media (min-width: 576px){
+        min-height: 725px;
+    }
 }
 .header__menu_main{
     a{

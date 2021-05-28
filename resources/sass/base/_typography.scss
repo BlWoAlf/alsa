@@ -60,17 +60,25 @@ body{
 
 .h1-main{
     font-weight: bold;
-    font-size: 48px;
-    line-height: 65px;
+    font-size: 30px;
+    line-height: 40px;
     text-transform: uppercase;
+    @media (min-width: 576px){
+        font-size: 48px;
+        line-height: 65px;
+    }
 }
 
 .h1-logo{
     font-weight: bold;
-    font-size: 48px;
-    line-height: 65px;
+    font-size: 32px;
+    line-height: 45px;
     text-transform: uppercase;
     margin-bottom: 0px;
+    @media (min-width: 992px){
+        font-size: 48px;
+        line-height: 65px;
+    }
 }
 
 .menu{    
@@ -100,9 +108,13 @@ body{
 }
 .button{
     font-weight: bold;
-    font-size: 18px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 21px;
     text-transform: uppercase;
+    @media (min-width: 576px){
+        font-size: 18px;
+        line-height: 25px;
+    }
 }
 
 // .contacts{

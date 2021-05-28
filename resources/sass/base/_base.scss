@@ -27,6 +27,7 @@ body{
 }
 
 .button{
+    @extend %flex-center;
     padding: 25px 46px;
     cursor: pointer;
 }
