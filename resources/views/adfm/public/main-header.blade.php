@@ -37,7 +37,7 @@
                 <h1 class="h1-main">Геофизические Исследования скважин</h1>
             </div>
             <div class="header__button">
-                <div class="button">Написать сообщение</div>
+                <div class="button-m" data-hystmodal="#modal">Написать сообщение</div>
             </div>
         </div>
     </div>

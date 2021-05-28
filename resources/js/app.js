@@ -69,5 +69,5 @@ $(function(){
 
     $('.header__burger-button').click(function(){        
         drawer.open();
-    });    
+    });
 });

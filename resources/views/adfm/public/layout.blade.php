@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
-    {{-- <x-adfm::feedback id="1"/> --}}
+    <x-adfm::feedback id="modal"/>
 
 @yield('content')
 

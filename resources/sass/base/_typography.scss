@@ -15,12 +15,15 @@ body{
 }
 
 .h1-header{
-    font-size: 36px;
+    font-size: 32px;
     line-height: 49px;
     margin-bottom: 48px;
     font-weight: $header-wight;
     text-transform: uppercase;
     text-align: center;
+    @media(min-width: 576px){
+        font-size: 36px;
+    }
 }
 .h2-header{
     font-weight: $header-wight;
@@ -106,7 +109,7 @@ body{
         text-align: right;
     }
 }
-.button{
+.button-m{
     font-weight: bold;
     font-size: 14px;
     line-height: 21px;
