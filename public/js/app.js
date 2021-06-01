@@ -5182,7 +5182,25 @@ $(function () {
   window.onload = function () {
     (0,tippy_js__WEBPACK_IMPORTED_MODULE_1__.default)('path[fill="#FF7E30"]', {
       plugins: [tippy_js__WEBPACK_IMPORTED_MODULE_1__.followCursor],
-      content: 'My tooltip!',
+      content: function content(reference) {
+        var str = reference.getAttribute('data-content');
+
+        if (str) {
+          var values = str.split(',,');
+
+          if (values.length > 1) {
+            values.forEach(function (item, i, arr) {
+              values[i] = i + 1 + '. ' + item;
+            });
+          }
+
+          str = values.join('<br>');
+          return str;
+        } else {
+          return 'В данном регионе не выполнялось геофизических работ';
+        }
+      },
+      allowHTML: true,
       followCursor: 'initial',
       delay: 100
     });

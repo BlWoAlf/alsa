@@ -18,14 +18,14 @@
 }
 
 .about-company_short{
-    min-height: 726px;
+    min-height: 520px;
     background: url('../../images/about-bg.jpg') no-repeat center;
     background-size: cover;
     .text{
         text-align: center;
     }
     @media(min-width: 768px){
-        min-height: 878px;
+        min-height: 520px;
     }
 }
 .about-company__img{

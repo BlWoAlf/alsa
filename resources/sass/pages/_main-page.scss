@@ -1,9 +1,10 @@
 .header_main{
-    min-height: 530px;
+    overflow: hidden;
+    min-height: 420px;
     background: url('../../images/main-header-bg.jpg') no-repeat center;
     background-size: cover;
     @media (min-width: 576px){
-        min-height: 725px;
+        min-height: 540px;
     }
 }
 .header__menu_main{

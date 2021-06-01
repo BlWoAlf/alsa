@@ -7,7 +7,23 @@ $(function(){
     window.onload=function() {
         tippy('path[fill="#FF7E30"]', {
             plugins: [followCursor],
-            content: 'My tooltip!',
+            content(reference) {
+                let str = reference.getAttribute('data-content');
+                if(str){
+                    let values = str.split(',,');
+                    if(values.length > 1){
+                        values.forEach(function(item, i, arr) {
+                            values[i] = (i+1)+'. '+item;
+                        });
+                    }
+                    str = values.join('<br>');
+                    return str;
+                }
+                else{
+                    return 'В данном регионе не выполнялось геофизических работ';
+                }
+            },
+            allowHTML: true,
             followCursor: 'initial',
             delay: 100,
         });
