@@ -6,7 +6,7 @@
         <div class="logo header__logo">
             <a href="{{url('/')}}">
                 <div class="logo__img">
-                    <img src="/images/logo-alsa.svg">
+                    <img src="/images/logo-alsa.png">
                 </div>
                 <div class="logo__text">
                     <h1 class="h1-logo">АЛСА</h1>

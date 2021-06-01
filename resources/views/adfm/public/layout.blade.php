@@ -21,7 +21,7 @@
                     <div class="logo footer__logo">
                         <a href="/">
                             <div class="logo__img">
-                                <img src="/images/geo_logo 3.svg">
+                                <img src="/images/logo-alsa.png">
                             </div>
                             <div class="logo__text">
                                 <h1 class="h1-logo">АЛСА</h1>

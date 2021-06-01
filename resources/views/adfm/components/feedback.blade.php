@@ -4,7 +4,7 @@
     <div class="hystmodal__wrap">
         <div class="hystmodal__window" role="dialog" aria-modal="true">
             <button data-hystclose class="hystmodal__close">Закрыть</button>
-            <div class="feedback-form">
+            <div class="feedback-form form">
                 @foreach($fields as $field)
                 <div class="col col-12 col-md-8 col-md-offset-2 field-feedbackform">
                 {!! $field !!}

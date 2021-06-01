@@ -11,6 +11,12 @@
   align-items: center;
 }
 
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo a, .header .header__line {
   display: flex;
   flex-direction: row;
@@ -11873,25 +11879,15 @@ body {
   color: #FFFFFF;
 }
 
-.header__logo .logo__img {
+.header__logo .logo__img, .footer__logo .logo__img {
   width: 103px;
   height: 96px;
 }
 @media (min-width: 992px) {
-  .header__logo .logo__img {
+  .header__logo .logo__img, .footer__logo .logo__img {
     width: 133px;
     height: 126px;
   }
-}
-
-.footer__logo {
-  max-width: 250px;
-  margin-bottom: 29px;
-}
-.footer__logo .logo__img {
-  width: 63px;
-  height: 55px;
-  margin-right: 33px;
 }
 
 .logo__bg {
@@ -12005,32 +12001,36 @@ body {
 }
 
 .feedback-form {
-  padding: 20px 30px;
+  padding: 40px 30px;
 }
 
 .field-feedbackform {
   margin-bottom: 16px;
 }
 
-.form .field input[type=text], .form .field input[type=email], .form .field input[type=password], .form .field .chosen-container-multi .chosen-choices {
+.form .field input[type=text], .form .field input[type=email], .form .field input[type=password], .form .field textarea, .form .field .chosen-container-multi .chosen-choices {
   width: 100%;
-  height: 36px;
   display: block;
   border: 1px solid #CACACA;
   font-size: 18px;
   padding: 8px 0 8px 10px;
 }
 
-.form .field input {
+.form .field input[type=text], .form .field input[type=email], .form .field input[type=password], .form .field .chosen-container-multi .chosen-choices {
+  height: 36px;
+}
+
+.form .field input, .form .field textarea {
   margin: 0;
   line-height: 2;
-  font-size: 16px;
-  font-family: Sans;
   color: #252525;
   background-color: #fff;
   background-image: none;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.form .field input:focus, .form .field textarea:focus {
+  box-shadow: 0px 3px 15px #b8bfe4;
 }
 
 .button-form {
@@ -12048,6 +12048,9 @@ body {
   color: #FFFFFF;
   border: none;
   transition: all 0.15s ease-out 0s;
+}
+.button-form:hover {
+  box-shadow: 0px 10px 20px #4c68ef;
 }
 
 .header_main {

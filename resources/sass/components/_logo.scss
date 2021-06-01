@@ -12,7 +12,7 @@
     }
 }
 
-.header__logo{
+.header__logo, .footer__logo{
     .logo__img{
         width: 103px;
         height: 96px;
@@ -23,15 +23,15 @@
     }
 }
 
-.footer__logo{
-    max-width: 250px;
-    margin-bottom: 29px;
-    .logo__img{
-        width: 63px;
-        height: 55px;
-        margin-right: 33px;
-    }
-}
+// .footer__logo{
+//     max-width: 250px;
+//     margin-bottom: 29px;
+//     .logo__img{
+//         width: 63px;
+//         height: 55px;
+//         margin-right: 33px;
+//     }
+// }
 
 .logo__bg{
     position: absolute;
