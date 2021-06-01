@@ -9,6 +9,7 @@ $(function(){
             plugins: [followCursor],
             content: 'My tooltip!',
             followCursor: 'initial',
+            delay: 100,
         });
     }
 

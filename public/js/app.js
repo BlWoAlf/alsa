@@ -5183,7 +5183,8 @@ $(function () {
     (0,tippy_js__WEBPACK_IMPORTED_MODULE_1__.default)('path[fill="#FF7E30"]', {
       plugins: [tippy_js__WEBPACK_IMPORTED_MODULE_1__.followCursor],
       content: 'My tooltip!',
-      followCursor: 'initial'
+      followCursor: 'initial',
+      delay: 100
     });
   };
 
