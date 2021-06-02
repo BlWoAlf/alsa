@@ -19,6 +19,9 @@
                 </h2> --}}
                 {!! $page->content !!}
                 @if(count($page->files) > 0)
+                @if($page->slug == 'foto')
+                @include('adfm::public.photos')
+                @else
                 <div class="row">
                     @foreach($page->files as $file)
                     <div class="col-6 col-sm-3">
@@ -28,6 +31,7 @@
                     </div>
                     @endforeach
                 </div>
+                @endif
                 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     
                     <!-- Background of PhotoSwipe. 

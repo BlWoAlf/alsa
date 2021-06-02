@@ -42,7 +42,19 @@ $(function(){
             items[i] = {
                 src: img,
                 w: 683,
-                h: 1024
+                h: 1024,
+            }
+        });
+
+        $('.photo__img').each(function(i, elem){
+            var src = elem.children[0].src.split('/');
+            src.splice(src.indexOf('image_cache'),1);
+            src.pop();
+            var img = src.join('/');
+            items[i] = {
+                src: img,
+                w: 1024,
+                h: 576,
             }
         });
 
@@ -62,9 +74,17 @@ $(function(){
     }
 
     $('.about-company__img').click(function(){
-        var index = $(this).parent().index();
-        openPhotoSwipe(index);
+        initPhotoSwipe($(this));
     });
+
+    $('.photo__img').click(function(){
+        initPhotoSwipe($(this));
+    });
+
+    function initPhotoSwipe(photo) {
+        var index = photo.parent().index();
+        openPhotoSwipe(index);
+    }
 
     // $('.header__burger-button').click(function(){
     //     $('.menu-mobile').toggleClass('menu-mobile_active');

@@ -35,7 +35,7 @@
             <div class="col-12 col-sm-4 col-md-6 col-lg-2 col-xl-4">
                 <div class="menu footer__content footer__menu">
                     <ul class="vertical-list footer__list">
-                        @php($links = \App\Models\Adfm\Menu::getData('footer-menu'))
+                        @php($links = \App\Models\Adfm\Menu::getData('main'))
                         @foreach($links[0] as $el)
                         <li class="list__item">
                             <a href="{{$el->link}}">{{$el->title}}</a>

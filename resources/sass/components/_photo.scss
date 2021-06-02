@@ -1,0 +1,7 @@
+.photo__img{
+    cursor: pointer;
+    margin-bottom: 25px;
+    img{
+        @extend %img-fill;
+    }
+}

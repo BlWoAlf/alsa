@@ -5220,6 +5220,17 @@ $(function () {
         h: 1024
       };
     });
+    $('.photo__img').each(function (i, elem) {
+      var src = elem.children[0].src.split('/');
+      src.splice(src.indexOf('image_cache'), 1);
+      src.pop();
+      var img = src.join('/');
+      items[i] = {
+        src: img,
+        w: 1024,
+        h: 576
+      };
+    });
     var options = {
       // history & focus options are disabled on CodePen        
       history: false,
@@ -5233,9 +5244,16 @@ $(function () {
   };
 
   $('.about-company__img').click(function () {
-    var index = $(this).parent().index();
+    initPhotoSwipe($(this));
+  });
+  $('.photo__img').click(function () {
+    initPhotoSwipe($(this));
+  });
+
+  function initPhotoSwipe(photo) {
+    var index = photo.parent().index();
     openPhotoSwipe(index);
-  }); // $('.header__burger-button').click(function(){
+  } // $('.header__burger-button').click(function(){
   //     $('.menu-mobile').toggleClass('menu-mobile_active');
   // });
   // $(document).mouseup(function (e){
@@ -5243,6 +5261,7 @@ $(function () {
   //         $('.menu-mobile').removeClass('menu-mobile_active');
   //     }
   // });
+
 
   var menu = new MmenuLight(document.querySelector(".main-menu"), "(max-width: 767px)");
   var navigator = menu.navigation();
