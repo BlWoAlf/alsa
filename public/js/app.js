@@ -5183,6 +5183,14 @@ $(function () {
     (0,tippy_js__WEBPACK_IMPORTED_MODULE_1__.default)('path[fill="#FF7E30"]', {
       plugins: [tippy_js__WEBPACK_IMPORTED_MODULE_1__.followCursor],
       content: function content(reference) {
+        var reg_name = reference.getAttribute('data-name');
+
+        if (reg_name == null) {
+          reg_name = '';
+        } else {
+          reg_name = '<b>' + reg_name + '</b><br>';
+        }
+
         var str = reference.getAttribute('data-content');
 
         if (str) {
@@ -5195,9 +5203,10 @@ $(function () {
           }
 
           str = values.join('<br>');
+          str = reg_name + str;
           return str;
         } else {
-          return 'В данном регионе не выполнялось геофизических работ';
+          return reg_name + 'В данном регионе не выполнялось геофизических работ';
         }
       },
       allowHTML: true,

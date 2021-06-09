@@ -8,7 +8,15 @@ $(function(){
         tippy('path[fill="#FF7E30"]', {
             plugins: [followCursor],
             content(reference) {
+                let reg_name = reference.getAttribute('data-name');
+                if(reg_name == null){
+                    reg_name = '';
+                }
+                else{
+                    reg_name = '<b>'+reg_name+'</b><br>';
+                }
                 let str = reference.getAttribute('data-content');
+
                 if(str){
                     let values = str.split(',,');
                     if(values.length > 1){
@@ -17,10 +25,11 @@ $(function(){
                         });
                     }
                     str = values.join('<br>');
+                    str = reg_name+str;
                     return str;
                 }
                 else{
-                    return 'В данном регионе не выполнялось геофизических работ';
+                    return reg_name+'В данном регионе не выполнялось геофизических работ';
                 }
             },
             allowHTML: true,
